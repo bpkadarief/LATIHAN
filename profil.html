@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">PRODUCT</a></li>
+        <li><a href="#">GALLERY</a></li>
+        <li><a href="#">BLOG</a></li>
+        <li><a href="#">INVENTORY</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="detail">
+        <img class="avatar" src="images/avatar.jpg" alt="" />
+        <div>
+          <h1 class="name">Robert</h1>
+          <div id="role" class="role">Fullstack Developer</div>
+        </div>
+
+        <div>
+          <div class="flex">
+            <div class="label">Availability</div>
+            <div>Fulltime</div>
+          </div>
+
+          <div class="flex">
+            <div class="label">Usia</div>
+            <div>30</div>
+          </div>
+
+          <div class="flex">
+            <div class="label">Lokasi</div>
+            <div>Bandung</div>
+          </div>
+
+          <div class="flex">
+            <div class="label">Pengalaman</div>
+            <div>5</div>
+          </div>
+
+          <div class="flex">
+            <div class="label">Email</div>
+            <div>Robert@mail.com</div>
+          </div>
+        </div>
+      </section>
+
+      <form method="get" id="profileForm">
+        <div>
+          <label for="nama">Nama</label>
+          <input type="text" id="nama" name="nama" />
+        </div>
+
+        <div>
+          <label for="role">Role</label>
+          <input type="text" id="role" name="role" />
+        </div>
+
+        <div>
+          <label for="availability">Availability</label>
+          <input type="text" id="availability" name="availability" />
+        </div>
+
+        <div>
+          <label for="age">Age</label>
+          <input type="number" id="age" name="age" />
+        </div>
+
+        <div>
+          <label for="lokasi">Lokasi</label>
+          <input type="text" id="lokasi" name="lokasi" />
+        </div>
+
+        <div>
+          <label for="experience">Year Experience</label>
+          <input type="number" id="experience" name="experience" />
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" />
+        </div>
+        <button type="submit">SUBMIT</button>
+      </form>
+    </main>
+  </body>
+</html>
