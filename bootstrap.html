@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Andrew Designer Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        background: #23294d;
+        margin: 0;
+        padding: 0;
+      }
+      .navbar {
+        background: linear-gradient(90deg, #23294d 60%, #23294d 100%);
+      }
+      .hero-section {
+        display: flex;
+        align-items: stretch;
+        min-height: 500px;
+        background: linear-gradient(90deg, #ff5e62 60%, #fff 100%);
+      }
+      .hero-left {
+        flex: 1;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 60px 60px 60px 8vw;
+      }
+      .hero-left h1 {
+        font-size: 4rem;
+        font-weight: 800;
+        margin-bottom: 32px;
+        line-height: 1;
+      }
+      .hero-left .about-title {
+        font-size: 1rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+      }
+      .hero-left .about-desc {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .hero-left .about-text {
+        font-size: 1rem;
+        color: #f8f8f8;
+        max-width: 500px;
+      }
+      .hire-btn {
+        position: absolute;
+        left: 50%;
+        top: 60%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        color: #ff5e62;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.1rem;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        border: none;
+        transition: box-shadow 0.2s;
+        z-index: 2;
+      }
+      .hire-btn:hover {
+        box-shadow: 0 12px 40px rgba(255,94,98,0.25);
+      }
+      .hero-right {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        position: relative;
+        min-width: 350px;
+      }
+      .hero-img {
+        width: 320px;
+        border-radius: 0 0 16px 16px;
+        object-fit: cover;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+      }
+      .brands-bar {
+        background: #23294d;
+        padding: 32px 0;
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        flex-wrap: wrap;
+      }
+      .brands-bar img, .brands-bar span {
+        height: 40px;
+        opacity: 0.7;
+        filter: grayscale(1);
+        margin: 0 20px;
+        font-size: 2rem;
+        color: #bfc6e0;
+        font-weight: 700;
+        letter-spacing: 2px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      @media (max-width: 991px) {
+        .hero-section {
+          flex-direction: column;
+          min-height: unset;
+        }
+        .hero-left, .hero-right {
+          padding: 40px 20px;
+          min-width: unset;
+        }
+        .hero-right {
+          justify-content: flex-start;
+        }
+        .hire-btn {
+          position: static;
+          margin: 32px auto 0 auto;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">ANDREW/DESIGNER</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">My Work</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section position-relative">
+      <div class="hero-left position-relative">
+        <h1>Andrew<br>Timothy</h1>
+        <div class="about-title">ABOUT ME</div>
+        <div class="about-desc">done</div>
+        <div class="about-text">
+          Society has put up so many boundaries, so many limitations on what’s right and wrong that it’s almost impossible to get a pure thought out.
+        </div>
+        <button class="hire-btn shadow">HIRE<br>ME</button>
+      </div>
+      <div class="hero-right">
+        <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=400&h=400&facepad=2" alt="Profile" class="hero-img">
+      </div>
+    </section>
+
+    <!-- Brands Bar -->
+    <div class="brands-bar">
+      <span>coinbase</span>
+      <span>NASA</span>
+      <span>NETFLIX</span>
+      <span>Pinterest</span>
+      <span>Spotify</span>
+      <span>vodafone</span>
+    </div>
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Tambahkan di bawah brands-bar -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-2" style="color:#23294d;">My Expertise</h2>
+    <p class="text-center text-secondary mb-5">See what people from all around the world are saying about our website.</p>
+    <div class="row justify-content-center">
+      <div class="col-md-4 mb-4 d-flex flex-column align-items-center">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=500&q=80" class="img-fluid rounded-4 mb-3" style="height:260px;object-fit:cover;" alt="Web Design">
+        <h5 class="fw-bold" style="color:#23294d;">Web Design</h5>
+      </div>
+      <div class="col-md-4 mb-4 d-flex flex-column align-items-center">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=500&q=80" class="img-fluid rounded-4 mb-3" style="height:260px;object-fit:cover;" alt="React Applications">
+        <h5 class="fw-bold" style="color:#23294d;">React Applications</h5>
+      </div>
+      <div class="col-md-4 mb-4 d-flex flex-column align-items-center">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=500&q=80" class="img-fluid rounded-4 mb-3" style="height:260px;object-fit:cover;" alt="SEO Optimization">
+        <h5 class="fw-bold" style="color:#23294d;">SEO Optimization</h5>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5" style="background: linear-gradient(90deg, #3a4069 60%, #23294d 100%);">
+  <div class="container">
+    <div class="row text-center text-white">
+      <div class="col-md-3 mb-4 mb-md-0">
+        <div class="display-5 fw-bold">200+</div>
+        <div class="fs-5">Projects Delivered</div>
+      </div>
+      <div class="col-md-3 mb-4 mb-md-0">
+        <div class="display-5 fw-bold">60+</div>
+        <div class="fs-5">Companies Helped</div>
+      </div>
+      <div class="col-md-3 mb-4 mb-md-0">
+        <div class="display-5 fw-bold">8+</div>
+        <div class="fs-5">Years of experience</div>
+      </div>
+      <div class="col-md-3">
+        <div class="display-5 fw-bold">99%</div>
+        <div class="fs-5">Happy Clients</div>
+      </div>
+    </div>
+  </div>
+</section> 
+</body>
+</html>

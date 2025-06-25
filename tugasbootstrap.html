@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+   <style>
+      body {
+        background: #9095b5;
+        margin: 0;
+        padding: 0;
+      }
+      .navbar {
+        background: linear-gradient(90deg, #327566 60%, #05681f 100%);
+      }
+      .hero-section {
+        display: flex;
+        align-items: stretch;
+        min-height: 500px;
+        background: linear-gradient(90deg, #7ed7e0 60%, #7b636e 100%);
+      }
+      .hero-left {
+        flex: 1;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 60px 60px 60px 8vw;
+      }
+      .hero-left h1 {
+        font-size: 4rem;
+        font-weight: 800;
+        margin-bottom: 32px;
+        line-height: 1;
+      }
+      .hero-left .about-title {
+        font-size: 1rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+      }
+      .hero-left .about-desc {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .hero-left .about-text {
+        font-size: 1rem;
+        color: #f8f8f8;
+        max-width: 500px;
+      }
+      .hire-btn {
+        position: absolute;
+        left: 50%;
+        top: 60%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        color: #ff5e62;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.1rem;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        border: none;
+        transition: box-shadow 0.2s;
+        z-index: 2;
+      }
+      .hire-btn:hover {
+        box-shadow: 0 12px 40px rgba(255,94,98,0.25);
+      }
+      .hero-right {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        position: relative;
+        min-width: 350px;
+      }
+      .hero-img {
+        width: 320px;
+        border-radius: 0 0 16px 16px;
+        object-fit: cover;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+      }
+      .brands-bar {
+        background: #023d3a;
+        padding: 32px 0;
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        flex-wrap: wrap;
+      }
+      .brands-bar img, .brands-bar span {
+        height: 40px;
+        opacity: 0.7;
+        filter: grayscale(1);
+        margin: 0 20px;
+        font-size: 2rem;
+        color: #bfc6e0;
+        font-weight: 700;
+        letter-spacing: 2px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      @media (max-width: 991px) {
+        .hero-section {
+          flex-direction: column;
+          min-height: unset;
+        }
+        .hero-left, .hero-right {
+          padding: 40px 20px;
+          min-width: unset;
+        }
+        .hero-right {
+          justify-content: flex-start;
+        }
+        .hire-btn {
+          position: static;
+          margin: 32px auto 0 auto;
+          transform: none;
+        }
+      }
+    </style>
+</head>
+<body>
+    <!--navigation bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">ARIEF/BPKAD</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">My Work</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="hero-section position-relative">
+      <div class="hero-left position-relative">
+        <h1>Arief<br>BPKAD</h1>
+        <div class="about-title">ABOUT ME</div>
+        <div class="about-desc">Prakom</div>
+        <div class="about-text"> a pranata komputer ahli pertama di BPKAD.</div>
+        </div>
+        <button class="hire-btn">Hire Me</button>
+      </div>
+      <div class="hero-right">
+        <img src="vangogh.jpg" alt="Profile" class="hero-img">
+      </div>
+     </section>
+             <!-- Brands Bar -->
+    <div class="brands-bar">
+      <span>Sariwangi</span>
+      <span>Indomie</span>
+      <span>Oskadon</span>
+      <span>Ciptaden</span>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Tambahkan di bawah brands-bar -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-2" style="color:#23294d;">My Expertise</h2>
+      <div class="row justify-content-center">
+      <div class="col-md-4 mb-4 d-flex flex-column align-items-center">
+        <img src="makan.jpg" class="img-fluid rounded-4 mb-3" style="height:260px;object-fit:cover;" alt="Web Design">
+        <h5 class="fw-bold" style="color:#23294d;">Makan</h5>
+      </div>
+      <div class="col-md-4 mb-4 d-flex flex-column align-items-center">
+        <img src="sleep.jpg" class="img-fluid rounded-4 mb-3" style="height:260px;object-fit:cover;" alt="Web Design">
+        <h5 class="fw-bold" style="color:#23294d;">Tidur</h5>
+      </div>
+      </div>
+  </div>
+</section>
+<section class="py-5" style="background: #fff;">
+<div> 
+<div class="text-right mb-4">
+    <h1> GET IN TOUCH </h1>
+</div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+        <div class="p-4 rounded-4 shadow" style="background: #fff;">
+          <form>
+            <div class="row mb-3">
+              <div class="col">
+                <label for="firstName" class="form-label fw-bold">First name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="eg. William">
+              </div>
+              <div class="col">
+                <label for="lastName" class="form-label fw-bold">Last name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="eg. Smith">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label fw-bold">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="will@creative-tim.com">
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label fw-bold">Your message</label>
+              <textarea class="form-control" id="message" rows="4" placeholder="Type here"></textarea>
+            </div>
+            <div class="form-check form-switch mb-4">
+              <input class="form-check-input" type="checkbox" id="terms">
+              <label class="form-check-label" for="terms">
+                I agree to the Terms and Conditions.
+</body>
+</html>
