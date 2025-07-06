@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Fetch API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        #user-list {
+            list-style: none;
+            padding: 0;
+            max-width: 400px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            text-align: left;
+        }
+        #user-list li {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        #user-list li:last-child {
+            border-bottom: none;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #loading-message {
+            color: #888;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Daftar Pengguna dari API</h1>
+    <button id="fetchUsersBtn">Muat Data Pengguna</button>
+    <p id="loading-message" style="display:none;">Memuat data...</p>
+    <ul id="user-list">
+        </ul>
+
+    <script>
+        // Mengambil elemen-elemen dari DOM
+        const fetchButton = document.getElementById('fetchUsersBtn');
+        const userList = document.getElementById('user-list');
+        const loadingMessage = document.getElementById('loading-message');
+
+        // URL API yang akan kita panggil
+        const API_URL = 'https://jsonplaceholder.typicode.com/users';
+
+        // Fungsi untuk mengambil data pengguna
+        function fetchUsers() {
+            userList.innerHTML = ''; // Kosongkan daftar sebelumnya
+            loadingMessage.style.display = 'block'; // Tampilkan pesan loading
+
+            // 1. Panggil fetch() dengan URL API
+            fetch(API_URL)
+                // 2. Promise pertama: Tangani respons dari server
+                .then(response => {
+                    // Cek jika respons tidak OK (misal status 404, 500)
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    // Jika OK, ubah respons menjadi format JSON
+                    return response.json(); // Ini juga mengembalikan Promise
+                })
+                // 3. Promise kedua: Tangani data JSON yang sudah diurai
+                .then(users => {
+                    loadingMessage.style.display = 'none'; // Sembunyikan pesan loading
+
+                    // Iterasi setiap pengguna yang didapat dari API
+                    users.forEach(user => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = `Nama: ${user.name}, Email: ${user.email}`;
+                        userList.appendChild(listItem); // Tambahkan ke daftar di HTML
+                    });
+                    console.log("Data pengguna berhasil dimuat:", users);
+                })
+                // 4. Tangani error jika terjadi masalah di tengah proses
+                .catch(error => {
+                    loadingMessage.style.display = 'none'; // Sembunyikan pesan loading
+                    userList.innerHTML = '<li style="color: red;">Gagal memuat data pengguna. Silakan coba lagi.</li>';
+                    console.error("Terjadi kesalahan:", error);
+                });
+        }
+
+        // Tambahkan event listener ke tombol untuk memanggil fungsi fetchUsers
+        fetchButton.addEventListener('click', fetchUsers);
+    </script>
+</body>
+</html>

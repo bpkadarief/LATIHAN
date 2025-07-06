@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Todo List</h1>
+        <form id="todoForm" class="mb-3">
+            <div class="input-group">
+                <input type="text" id="todoInput" class="form-control" placeholder="Add a new todo" required>
+                <button class="btn btn-primary" type="submit">Add</button>
+            </div>
+        </form>
+        <ul id="todoList" class="list-group"></ul>
+    </div>
+    <script>
+        const todoForm = document.getElementById('todoForm');
+        const todoInput = document.getElementById('todoInput');
+        const todoList = document.getElementById('todoList');
+
+        todoForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const text = todoInput.value.trim();
+            if (text === "") return;
+            addTodo(text);
+            todoInput.value = "";
+        });
+
+        function addTodo(text) {
+            const li = document.createElement('li');
+            li.className = 'list-group-item d-flex align-items-center justify-content-between';
+
+            const div = document.createElement('div');
+            div.className = 'form-check';
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.className = 'form-check-input me-2';
+            checkbox.addEventListener('change', function() {
+                if (checkbox.checked) {
+                    span.style.textDecoration = 'line-through';
+                } else {
+                    span.style.textDecoration = '';
+                }
+            });
+
+            const span = document.createElement('span');
+            span.textContent = text;
+
+            div.appendChild(checkbox);
+            div.appendChild(span);
+
+            const btnDelete = document.createElement('button');
+            btnDelete.className = 'btn btn-danger btn-sm ms-2';
+            btnDelete.textContent = 'Delete';
+            btnDelete.onclick = function() {
+                li.remove();
+            };
+
+            li.appendChild(div);
+            li.appendChild(btnDelete);
+
+            todoList.appendChild(li);
+        }
+    </script>
+</body>
+</html>
