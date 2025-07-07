@@ -158,8 +158,7 @@ productForm.addEventListener('submit', async (event) => { // Tandai fungsi sebag
         } catch (error) {
             console.error("Error fetching additional data:", error);
             alert(`Terjadi kesalahan saat mengambil data tambahan: ${error.message}. Produk tetap disimpan.`);
-            // Jika fetch gagal, Anda masih bisa menampilkan data dari form saja
-            // displayProduct(productData); // Opsi: tetap tampilkan data form tanpa data API
+            
         }
 
     } else {
@@ -230,18 +229,11 @@ function displayProduct(product) {
     productItemDiv.appendChild(priceP);
     productItemDiv.appendChild(descriptionP);
     productItemDiv.appendChild(productInfoDiv);
-    productItemDiv.appendChild(additionalInfoDiv); // Tambahkan info API
+    productItemDiv.appendChild(additionalInfoDiv);
     productItemDiv.appendChild(productActionsDiv);
 
-    // Tambahkan productItemDiv ke dalam container productList
-    productListContainer.prepend(productItemDiv); // prepend agar produk baru muncul di atas
-}
 
+    productListContainer.prepend(productItemDiv); 
 
-// --- Inisialisasi awal (misal untuk Quantity jika Stock Status defaultnya Out of Stock) ---
-// Panggil handler change untuk memastikan status quantity sesuai dengan default value stockStatus saat load
 stockStatusSelect.dispatchEvent(new Event('change'));
 
-// --- Optional: Initial display for the example product in HTML ---
-// You might want to remove the static example product from HTML
-// and add it dynamically using displayProduct() on page load.
